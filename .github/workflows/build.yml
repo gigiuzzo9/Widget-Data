@@ -35,14 +35,18 @@ jobs:
           $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$HOME/android-sdk --licenses < /dev/null
           $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$HOME/android-sdk "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-      - name: Setup Gradle wrapper
-        run: gradle wrapper --gradle-version 8.5
+      - name: Download Gradle 8.5
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.5-bin.zip
+          unzip -q gradle-8.5-bin.zip
+          echo "$PWD/gradle-8.5/bin" >> $GITHUB_PATH
 
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: |
+          if [ -f gradlew ]; then chmod +x gradlew; fi
 
       - name: Build with Gradle
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
         env:
           ANDROID_HOME: $HOME/android-sdk
           ANDROID_SDK_ROOT: $HOME/android-sdk
