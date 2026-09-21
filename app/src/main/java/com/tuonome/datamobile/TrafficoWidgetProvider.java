@@ -4,7 +4,8 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.net.NetworkStatsManager;
+import android.app.usage.NetworkStatsManager;
+import android.app.usage.NetworkStats;
 import android.widget.RemoteViews;
 
 import java.util.Calendar;
@@ -28,8 +29,8 @@ public class TrafficoWidgetProvider extends AppWidgetProvider {
 
             RemoteViews views = new RemoteViews(ctx.getPackageName(), R.layout.widget_traffico);
             views.setTextViewText(
-				R.id.txt_gb,
-				gb < 0 ? "-- GB" : String.format("%.2f GB", gb)
+                    R.id.txt_gb,
+                    gb < 0 ? "-- GB" : String.format("%.2f GB", gb)
             );
 
             mgr.updateAppWidget(id, views);
@@ -39,7 +40,7 @@ public class TrafficoWidgetProvider extends AppWidgetProvider {
     private double leggiGbMobile(Context context) {
         try {
             NetworkStatsManager nsm =
-				(NetworkStatsManager) context.getSystemService(Context.NETWORK_STATS_SERVICE);
+                    (NetworkStatsManager) context.getSystemService(Context.NETWORK_STATS_SERVICE);
 
             Calendar cal = Calendar.getInstance();
             cal.set(Calendar.DAY_OF_MONTH, 1);
@@ -50,11 +51,11 @@ public class TrafficoWidgetProvider extends AppWidgetProvider {
             long inizio = cal.getTimeInMillis();
             long adesso = System.currentTimeMillis();
 
-            android.app.usage.NetworkStats.Bucket bucket = nsm.querySummaryForDevice(
-				ConnectivityManager.TYPE_MOBILE,
-				null,
-				inizio,
-				adesso
+            NetworkStats.Bucket bucket = nsm.querySummaryForDevice(
+                    ConnectivityManager.TYPE_MOBILE,
+                    null,
+                    inizio,
+                    adesso
             );
 
             if (bucket == null) return -1.0;
