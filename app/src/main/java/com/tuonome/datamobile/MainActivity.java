@@ -20,7 +20,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        costruisciInterfaccia();
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Ricostruisci l'interfaccia senza recreate()
+        costruisciInterfaccia();
+    }
+
+    private void costruisciInterfaccia() {
         SharedPreferences prefs = getSharedPreferences("dati", MODE_PRIVATE);
 
         LinearLayout layout = new LinearLayout(this);
@@ -89,12 +99,6 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(nota);
 
         setContentView(layout);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        recreate();
     }
 
     private boolean hasUsagePermission() {
