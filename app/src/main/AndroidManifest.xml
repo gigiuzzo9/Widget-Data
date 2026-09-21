@@ -10,7 +10,7 @@
     <application
         android:allowBackup="true"
         android:label="Widget Data"
-        android:theme="@android:style/Theme.DeviceDefault">
+        android:theme="@style/Theme.AppCompat.DayNight">
 
         <activity
             android:name=".MainActivity"
