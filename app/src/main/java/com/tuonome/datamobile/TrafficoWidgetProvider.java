@@ -1,14 +1,11 @@
+
 package com.tuonome.datamobile;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.app.usage.NetworkStatsManager;
-import android.app.usage.NetworkStats;
+import android.net.TrafficStats;
 import android.widget.RemoteViews;
-
-import java.util.Calendar;
 
 public class TrafficoWidgetProvider extends AppWidgetProvider {
 
@@ -25,44 +22,28 @@ public class TrafficoWidgetProvider extends AppWidgetProvider {
         final int id = appWidgetId;
 
         new Thread(() -> {
-            double gb = leggiGbMobile(ctx);
+            String valore = leggiGbMobile();
 
             RemoteViews views = new RemoteViews(ctx.getPackageName(), R.layout.widget_traffico);
-            views.setTextViewText(
-                    R.id.txt_gb,
-                    gb < 0 ? "-- GB" : String.format("%.2f GB", gb)
-            );
-
+            views.setTextViewText(R.id.txt_gb, valore);
             mgr.updateAppWidget(id, views);
         }).start();
     }
 
-    private double leggiGbMobile(Context context) {
+    private String leggiGbMobile() {
         try {
-            NetworkStatsManager nsm =
-                    (NetworkStatsManager) context.getSystemService(Context.NETWORK_STATS_SERVICE);
+            long rx = TrafficStats.getMobileRxBytes();
+            long tx = TrafficStats.getMobileTxBytes();
 
-            Calendar cal = Calendar.getInstance();
-            cal.set(Calendar.DAY_OF_MONTH, 1);
-            cal.set(Calendar.HOUR_OF_DAY, 0);
-            cal.set(Calendar.MINUTE, 0);
-            cal.set(Calendar.SECOND, 0);
-            cal.set(Calendar.MILLISECOND, 0);
-            long inizio = cal.getTimeInMillis();
-            long adesso = System.currentTimeMillis();
+            if (rx == TrafficStats.UNSUPPORTED || tx == TrafficStats.UNSUPPORTED) {
+                return "N/D";
+            }
 
-            NetworkStats.Bucket bucket = nsm.querySummaryForDevice(
-                    ConnectivityManager.TYPE_MOBILE,
-                    null,
-                    inizio,
-                    adesso
-            );
-
-            if (bucket == null) return -1.0;
-            long byteTotali = bucket.getRxBytes() + bucket.getTxBytes();
-            return byteTotali / 1024.0 / 1024.0 / 1024.0;
+            long byteTotali = rx + tx;
+            double gb = byteTotali / 1024.0 / 1024.0 / 1024.0;
+            return String.format("%.2f GB", gb);
         } catch (Exception e) {
-            return -1.0;
+            return "ERR";
         }
     }
 }
