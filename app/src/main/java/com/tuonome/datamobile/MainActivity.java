@@ -1,4 +1,4 @@
-package com.tuonome.datamobile;
+package com.datawidget.datamobile;
 
 import android.app.AppOpsManager;
 import android.content.Context;
