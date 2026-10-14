@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace 'com.tuonome.datamobile'
+    namespace 'com.datawidget.datamobile'
     compileSdk 34
     buildToolsVersion "34.0.0"
 
     defaultConfig {
-        applicationId "com.tuonome.datamobile"
+        applicationId "com.datawidget.datamobile"
         minSdk 24
         targetSdk 34
         versionCode 1
