@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">Autorisation requise. Activez-la ci-dessous.</string>
+    <string name="attiva_permesso">ACTIVER L\'AUTORISATION</string>
+    <string name="permesso_attivo">Autorisation active</string>
+    <string name="giorno_ciclo">Jour de début du cycle :</string>
+    <string name="salva">ENREGISTRER</string>
+    <string name="salvato">Enregistré</string>
+    <string name="errore_range">1-28</string>
+</resources>
