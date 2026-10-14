@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">Permission required. Enable it below.</string>
+    <string name="attiva_permesso">ENABLE PERMISSION</string>
+    <string name="permesso_attivo">Permission active</string>
+    <string name="giorno_ciclo">Cycle start day:</string>
+    <string name="salva">SAVE</string>
+    <string name="salvato">Saved</string>
+    <string name="errore_range">1-28</string>
+</resources>
