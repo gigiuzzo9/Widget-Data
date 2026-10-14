@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">需要权限。请在下方启用。</string>
+    <string name="attiva_permesso">启用权限</string>
+    <string name="permesso_attivo">权限已启用</string>
+    <string name="giorno_ciclo">周期开始日：</string>
+    <string name="salva">保存</string>
+    <string name="salvato">已保存</string>
+    <string name="errore_range">1-28</string>
+</resources>
