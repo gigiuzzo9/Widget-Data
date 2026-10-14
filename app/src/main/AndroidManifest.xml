@@ -25,7 +25,7 @@
 
         <receiver
             android:name=".TrafficoWidgetProvider"
-            android:label="Widget Data"
+            android:label="Data Widget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
