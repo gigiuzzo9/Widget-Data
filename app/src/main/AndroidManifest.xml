@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="Widget Data"
+        android:label="Data Widget"
         android:icon="@drawable/ic_launcher"
         android:theme="@style/Theme.AppCompat.DayNight">
 
