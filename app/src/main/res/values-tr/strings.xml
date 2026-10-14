@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">İzin gerekli. Aşağıdan etkinleştirin.</string>
+    <string name="attiva_permesso">İZNİ ETKİNLEŞTİR</string>
+    <string name="permesso_attivo">İzin etkin</string>
+    <string name="giorno_ciclo">Döngü başlangıç günü:</string>
+    <string name="salva">KAYDET</string>
+    <string name="salvato">Kaydedildi</string>
+    <string name="errore_range">1-28</string>
+</resources>
