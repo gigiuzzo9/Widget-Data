@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">権限が必要です。以下で有効にしてください。</string>
+    <string name="attiva_permesso">権限を有効にする</string>
+    <string name="permesso_attivo">権限が有効です</string>
+    <string name="giorno_ciclo">サイクル開始日：</string>
+    <string name="salva">保存</string>
+    <string name="salvato">保存しました</string>
+    <string name="errore_range">1-28</string>
+</resources>
