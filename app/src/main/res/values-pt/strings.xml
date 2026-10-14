@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">Permissão necessária. Ative-a abaixo.</string>
+    <string name="attiva_permesso">ATIVAR PERMISSÃO</string>
+    <string name="permesso_attivo">Permissão ativa</string>
+    <string name="giorno_ciclo">Dia de início do ciclo:</string>
+    <string name="salva">SALVAR</string>
+    <string name="salvato">Salvo</string>
+    <string name="errore_range">1-28</string>
+</resources>
