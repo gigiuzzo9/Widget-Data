@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">Требуется разрешение. Включите его ниже.</string>
+    <string name="attiva_permesso">ВКЛЮЧИТЬ РАЗРЕШЕНИЕ</string>
+    <string name="permesso_attivo">Разрешение активно</string>
+    <string name="giorno_ciclo">День начала цикла:</string>
+    <string name="salva">СОХРАНИТЬ</string>
+    <string name="salvato">Сохранено</string>
+    <string name="errore_range">1-28</string>
+</resources>
