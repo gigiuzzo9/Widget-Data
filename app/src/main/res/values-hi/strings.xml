@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">अनुमति आवश्यक है। नीचे इसे सक्षम करें।</string>
+    <string name="attiva_permesso">अनुमति सक्षम करें</string>
+    <string name="permesso_attivo">अनुमति सक्रिय</string>
+    <string name="giorno_ciclo">चक्र प्रारंभ दिन:</string>
+    <string name="salva">सहेजें</string>
+    <string name="salvato">सहेजा गया</string>
+    <string name="errore_range">1-28</string>
+</resources>
