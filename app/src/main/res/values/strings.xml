@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WidgetData</string>
-    <string name="hello_world">Hello world!</string>
-
+   <string name="permesso_necessario">Permesso necessario. Attivalo qui sotto.</string>
+<string name="attiva_permesso">ATTIVA PERMESSO</string>
+<string name="permesso_attivo">Permesso attivo</string>
+<string name="giorno_ciclo">Giorno inizio ciclo:</string>
+<string name="salva">SALVA</string>
+<string name="salvato">Salvato</string>
+<string name="errore_range">1-28</string>
 </resources>
