@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         if (mode != AppOpsManager.MODE_ALLOWED) {
             TextView avviso = new TextView(this);
             avviso.setTextSize(18);
-            avviso.setText("Permesso necessario. Attivalo qui sotto.");
+            avviso.setText(R.string.permesso_necessario);
             layout.addView(avviso);
 
             Button btnPermesso = new Button(this);
-            btnPermesso.setText("ATTIVA PERMESSO");
+            btnPermesso.setText(R.string.attiva_permesso);
             btnPermesso.setOnClickListener(v -> {
                 Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
                 intent.setData(Uri.parse("package:" + getPackageName()));
@@ -53,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             TextView ok = new TextView(this);
             ok.setTextSize(16);
-            ok.setText("Permesso attivo");
+            ok.setText(R.string.permesso_attivo);
             layout.addView(ok);
         }
 
         // Giorno ciclo
         TextView titolo = new TextView(this);
         titolo.setTextSize(18);
-        titolo.setText("\nGiorno inizio ciclo:");
+        titolo.setText(R.string.giorno_ciclo);
         layout.addView(titolo);
 
         EditText campo = new EditText(this);
@@ -69,17 +69,17 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(campo);
 
         Button salva = new Button(this);
-        salva.setText("SALVA");
+        salva.setText(R.string.salva);
         salva.setOnClickListener(v -> {
             String testo = campo.getText().toString().trim();
             if (testo.isEmpty()) return;
             int giorno = Integer.parseInt(testo);
             if (giorno < 1 || giorno > 28) {
-                Toast.makeText(this, "1-28", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.errore_range, Toast.LENGTH_SHORT).show();
                 return;
             }
             prefs.edit().putInt("giorno_ciclo", giorno).apply();
-            Toast.makeText(this, "Salvato", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.salvato, Toast.LENGTH_SHORT).show();
         });
         layout.addView(salva);
 
