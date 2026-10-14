@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="permesso_necessario">Berechtigung erforderlich. Aktivieren Sie sie unten.</string>
+    <string name="attiva_permesso">BERECHTIGUNG AKTIVIEREN</string>
+    <string name="permesso_attivo">Berechtigung aktiv</string>
+    <string name="giorno_ciclo">Starttag des Zyklus:</string>
+    <string name="salva">SPEICHERN</string>
+    <string name="salvato">Gespeichert</string>
+    <string name="errore_range">1-28</string>
+</resources>
